@@ -1,7 +1,6 @@
-on:
-  push:
-    branches:
-      - main
+name: Release
+
+on: push
 
 jobs:
   release:
@@ -17,3 +16,8 @@ jobs:
           go mod tidy
           go build -o listen main.go
           ls -lh
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: listen
