@@ -16,7 +16,7 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           go mod tidy
-          go build -o listen main.go
+          GOOS=linux GOARCH=amd64 go build -o listen main.go
           ls -lh
       - name: Release
         uses: softprops/action-gh-release@v1
