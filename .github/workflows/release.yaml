@@ -13,6 +13,7 @@ jobs:
           go-version: '1.21'
       - name: Build
         run:
+          cd $GITHUB_WORKSPACE
           go mod tidy
           go build -o listen main.go
           ls -lh
