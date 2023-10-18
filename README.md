@@ -13,11 +13,11 @@ $ chmod +x /usr/local/bin/listen
 
 ```shell
 # 监听的目录
-$ LISTEN_PATH=/data/wwwroot
+$ export LISTEN_PATH=/data/wwwroot
 # 监听的用户，给这个B权限
-$ LISTEN_USER=www
+$ export LISTEN_USER=www
 # 监听的文件扩展
-$ LISTEN_EXTENSION=.log
+$ export LISTEN_EXTENSION=.log
 ```
 
 运行
