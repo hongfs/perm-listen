@@ -20,11 +20,22 @@ $ export LISTEN_USER=www
 $ export LISTEN_EXTENSION=.log
 ```
 
-运行
+后台运行
 
 ```shell
-$ LISTEN_PATH=/data/wwwroot LISTEN_EXTENSION=.log LISTEN_USER=www /usr/local/bin/listen
+$ LISTEN_PATH=/data/wwwroot LISTEN_EXTENSION=.log LISTEN_USER=www /usr/local/bin/listen &
 ```
+
+查看日志
 
 日志文件位于： `/tmp/perm-listen.log`，可以使用 `tail -f /tmp/perm-listen.log` 实时查看。
 
+杀死进程
+
+```shell
+$ ps aux | grep /usr/local/bin/listen
+root     20705  0.0  0.0 1227980 3312 pts/0    Sl   20:21   0:00 /usr/local/bin/listen
+
+# 干他
+$ kill -9 20705
+```
